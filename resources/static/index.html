@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ing.Movie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/welcome.css">
+</head>
+
+
+<body>
+
+
+<div class="container" id="main-container">
+        
+        <div class="logo-header">
+           <img src="/img/F.png" alt="Logo" class="logo-img">
+            <h2>Ing.Flix</h2>
+        </div>
+
+        <div id="welcome-view" class="fade-in">
+            <p style="margin-bottom: 20px; font-size: 1.1em;">Il cinema a casa tua.</p>
+            
+            <a href="/oauth2/authorization/keycloak" style="text-decoration: none;">
+                <button class="welcome-btn">Benvenuto</button>
+            </a>
+        </div>
+
+        </div>
+
+<script>
+    // Funzione che gestisce il cambio pagina
+    function goToHome() {
+        const welcomeView = document.getElementById('welcome-view');
+        const homeView = document.getElementById('home-view');
+        
+        // Nasconde la schermata di benvenuto
+        welcomeView.style.display = 'none';
+        
+        // Mostra la schermata Home
+        homeView.classList.remove('hidden');
+        homeView.classList.add('fade-in');
+        
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+

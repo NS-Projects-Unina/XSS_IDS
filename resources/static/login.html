@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accedi o Registrati a Ing.Movie</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="container">
+    <h2><i class="fas fa-play-circle"></i> Ing.Flix</h2>
+    <!--  "fas fa-camera-retro"  "fas fa-film"-->
+    <form id="loginForm">
+            <div class="input-group">
+        <label>Username:</label>
+        <i class="fas fa-envelope icon email-icon"></i>
+        <input type="text" id="username" name="username" placeholder="Inserisci il tuo username " required>
+    </div>
+
+    <div class="input-group">
+    <label>Password:</label>
+    
+    <div class="input-wrapper">
+        <i class="fas fa-lock icon password-icon"></i>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Inserisci la tua password"
+            required
+        />
+    </div>
+    
+    <div id="password-error" style="display:none; color:red; margin-top: 10px;"></div>
+    
+    <span class="forgot-password">
+        <a href="/reset-password">Password dimenticata?</a>
+    </span>
+    </div>
+
+        <button type="submit" class="login-btn">
+            <i class="fas fa-sign-in-alt"></i> Accedi
+        </button>
+    </form>
+
+    <p id="login-result"></p>
+    
+    <div class="register-link">
+        Non hai un account? <a href="/register" class="register-btn-text">Registrati ora</a>
+    </div>
+</div>
+
+<script src="js/login1.js"></script>
+
+
+</body>
+</html>
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ing.Flix - Offerte Esclusive</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #141414; 
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+ 
+        .container {
+            text-align: center;
+            background: #1f1f1f;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 500px;
+            width: 90%;
+            border-top: 4px solid #e50914;
+        }
+ 
+        h1 { font-size: 1.5rem; color: #888; margin-bottom: 20px; }
+ 
+        .promo-card {
+            padding: 20px;
+            border: 1px solid #333;
+            background: #2b2b2b;
+            border-radius: 8px;
+        }
+ 
+        #promo-title {
+            color: #e50914;
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+ 
+        #promo-desc {
+            color: #aaa;
+            font-size: 1rem;
+        }
+ 
+        .logo {
+            font-weight: bold;
+            color: #e50914;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="container">
+        <div class="logo">Ing.Flix</div>
+        <h1>Offerte del Mese 🍿</h1>
+       
+        <div id="promo-container" class="promo-card">
+            <h2 id="promo-title">Nessuna Promo Attiva</h2>
+            <p id="promo-desc">Inserisci un codice promozionale valido per visualizzare lo sconto.</p>
+        </div>
+    </div>
+ 
+    <script>
+        function loadPromo() {
+            // Estrae i dati dal frammento dell'URL 
+            const hash = window.location.hash.substring(1);
+           
+            if (hash) {
+                const params = new URLSearchParams(hash);
+                const promoName = params.get('name');
+ 
+                if (promoName) {
+                    // VULNERABILITÀ DOM XSS
+                    // Il contenuto di 'name' viene iniettato direttamente come HTML
+                    document.getElementById('promo-title').innerHTML = "Codice: " + promoName;
+                    document.getElementById('promo-desc').innerHTML = "Lo sconto è stato applicato al tuo carrello!";
+                }
+            }
+        }
+ 
+        // Gestisce il cambio URL senza ricaricare e il caricamento iniziale
+        window.addEventListener('hashchange', loadPromo);
+        window.onload = loadPromo;
+    </script>
+</body>
+</html>

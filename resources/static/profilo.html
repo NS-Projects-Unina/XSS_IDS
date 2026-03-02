@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Mio Profilo - Ing.Flix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/profilo.css">
+</head>
+<body>
+
+    <header>
+
+    </header>
+
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <i class="fas fa-user-circle profile-avatar"></i>
+                <h2 id="prof-fullname">Caricamento...</h2>
+            </div>
+
+            <div class="profile-details">
+                <div class="profile-row">
+                    <span class="profile-label">Username</span>
+                    <span class="profile-value" id="prof-username">-</span>
+                </div>
+                <div class="profile-row">
+                    <span class="profile-label">Email</span>
+                    <span class="profile-value" id="prof-email">-</span>
+                </div>
+                <div class="profile-row">
+                    <span class="profile-label">Nome</span>
+                    <span class="profile-value" id="prof-firstname">-</span>
+                </div>
+                <div class="profile-row">
+                    <span class="profile-label">Cognome</span>
+                    <span class="profile-value" id="prof-lastname">-</span>
+                </div>
+                <div class="profile-row">
+                    <span class="profile-label">ID Utente (Keycloak)</span>
+                    <span class="profile-value" id="prof-id" style="font-size: 0.8em;">-</span>
+                </div>
+            </div>
+
+            <a href="catalogo.html" class="btn-back">Torna al Catalogo</a>
+            <a href="/logout" class="btn-back" style="background-color: #e50914;">Logout</a>
+        </div>
+    </div>
+
+    <script src="js/profilo.js"></script>
+</body>
+</html>

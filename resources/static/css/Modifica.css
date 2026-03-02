@@ -1,0 +1,191 @@
+/* Reset e Font */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+/* 1. NUOVO SFONDO "CINEMA ELEGANTE" */
+body {
+    
+    background-color: #121212; 
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.386), rgba(0, 0, 0, 0.7)), 
+                      url('../img/collage-di-sfondo-del-film.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    min-height: 100vh;
+}
+
+
+/* 2. HEADER E AREA UTENTE */
+.top-bar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.back-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.role-badge {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Profilo Utente (Cerchio) */
+.user-profile {
+    position: relative; 
+    cursor: pointer;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #054077a3; 
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: 2px solid #fff;
+    transition: transform 0.2s;
+}
+
+.user-profile:hover .avatar { transform: scale(1.05); }
+
+/* Menu a Tendina (Dropdown) */
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+
+.dropdown-menu.show { display: block; }
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.dropdown-menu a:hover { background-color: #f0f0f0; }
+.dropdown-menu a.logout { color: #d9534f; border-top: 1px solid #eee; }
+
+/* 3. LAYOUT FORM */
+.admin-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.movie-form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    
+ 
+    overflow: hidden; 
+    
+   
+    display: block;
+}
+
+/* Titolo dentro il form */
+.form-title {
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 1.8rem;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin-bottom: 30px;
+}
+
+.form-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.form-section { flex: 1; min-width: 280px; }
+
+/* Stili input generali (uguali a prima) */
+.form-group { margin-bottom: 20px; }
+.form-row { display: flex; gap: 15px; }
+.form-row .form-group { flex: 1; }
+label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; color: #555; }
+input, select, textarea {
+    width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;
+}
+input:focus { border-color: #ffd700; outline: none; } 
+
+.image-preview {
+    width: 100%; height: 300px; background: #f9f9f9; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px dashed #ddd; overflow: hidden;
+}
+.image-preview img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Allinea a destra */
+    margin-top: 20px;
+}
+
+.btn-save { background-color: #222; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+.btn-save:hover { background-color: #000; }
+.btn-cancel { background-color: #eee; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; }
+
+/* --- STILE BOTTONE ELIMINA --- */
+.btn-delete {
+    background-color: #c83120;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-delete:hover {
+    background-color: #b71b0d; 
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

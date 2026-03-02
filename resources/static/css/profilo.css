@@ -1,0 +1,42 @@
+        /* Stile specifico per la card del profilo */
+        body{
+            background-color: black;
+        }
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile-avatar {
+            font-size: 80px;
+            color: #e50914;
+            margin-bottom: 10px;
+        }
+        .profile-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .profile-label { font-weight: bold; color: #555; }
+        .profile-value { color: #333; font-family: monospace; font-size: 1.1em; }
+        
+        .btn-back {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-back:hover { background-color: #555; }

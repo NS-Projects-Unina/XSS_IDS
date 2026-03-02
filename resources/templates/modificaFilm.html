@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/Modifica.css}">
+    <title>Modifica Film</title>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <a href="/catalogo.html" class="back-link">⬅ Torna all'elenco</a>
+
+        <div class="user-area">
+            <span class="role-badge">Admin</span>
+
+            <div class="user-profile" onclick="toggleMenu()">
+                <div class="avatar">A</div>
+
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="/profile">Profilo</a>
+                    <a href="/logout" class="logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENITORE CENTRALE -->
+    <div class="admin-container">
+
+        <div class="movie-form">
+
+            <h2 class="form-title" th:text="'Modifica film: ' + ${film.titolo}"></h2>
+            <hr class="divider">
+
+            <form>
+
+                <input type="hidden" id="id" name="id" th:value="${film.id}" />
+
+                <div class="form-body">
+
+                    <div class="form-section">
+
+                        <div class="form-group">
+                            <label>Titolo</label>
+                            <input type="text" th:value="${film.titolo}" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Durata (min)</label>
+                            <input type="number" th:value="${film.durata_min}" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descrizione</label>
+                            <textarea id="descrizione" name="descrizione" th:text="${film.descrizione}"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Prezzo Noleggio (€)</label>
+                                <input type="number" step="0.01" id="noleggio" name="noleggio"
+                                       th:value="${film.noleggio}">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Prezzo Acquisto (€)</label>
+                                <input type="number" step="0.01" id="acquisto" name="acquisto"
+                                       th:value="${film.acquisto}">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+    <div class="actions">
+        <button type="button" class="btn-save" onclick="inviaModifiche()">Salva Modifiche</button>
+        
+        <button type="button" class="btn-delete" onclick="eliminaFilm()">
+            Elimina
+        </button>
+
+        <button type="reset" class="btn-cancel">Annulla</button>
+    </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // JS per il menu utente
+        function toggleMenu() {
+            document.getElementById("dropdownMenu").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.closest(".user-profile")) {
+                document.getElementById("dropdownMenu").classList.remove("show");
+            }
+        };
+    </script>
+
+    <script type="text/javascript" th:src="@{/js/modificaFilm.js}"></script>
+
+</body>
+</html>

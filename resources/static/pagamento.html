@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferma Pagamento</title>
+    <link rel="stylesheet" href="css/pagamento.css"> 
+</head>
+
+<body>
+
+    <div class="checkout-container">
+
+        <div class="order-card">
+
+            <!-- HEADER -->
+            <div class="card-header">
+                <h2>Riepilogo Ordine</h2>
+                <p>Controlla i dettagli prima di confermare</p>
+            </div>
+
+            <hr class="divider">
+
+            <!-- DETTAGLI FILM -->
+            <div class="movie-details">
+                <span class="label">Tipo Transazione</span>
+                <div id="transaction-type" class="badge">-</div>
+
+                <br><br>
+
+                <span class="label">Film Selezionato</span>
+                <h1 id="film-title">-</h1>
+            </div>
+
+            <hr class="divider">
+
+            <!-- PREZZO -->
+            <div class="price-section">
+                <span class="label">Totale da pagare</span>
+                <div id="final-price" class="price">€ 0.00</div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- AZIONI -->
+            <div class="actions">
+                <button class="btn-confirm">
+                    Conferma e Procedi
+                </button>
+
+                <a href="/catalogo.html" class="btn-cancel">Annulla</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/pagamento.js"></script>
+</body>
+</html>

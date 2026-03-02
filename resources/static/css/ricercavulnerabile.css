@@ -1,0 +1,244 @@
+/* Reset stili base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #141414;
+    color: white;
+    min-height: 100vh;
+    overflow-y: auto; 
+}
+
+/* Navbar */
+.navbar {
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.7));
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    color: #E50914;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: white;
+}
+
+/* Sezione Centrale */
+.hero {
+    min-height: 100vh;               
+    padding: 100px 40px 60px;       
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;      
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+                url('https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;    
+}
+
+.search-container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.search-container h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.search-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Form di ricerca */
+.search-form {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: #141414;
+}
+
+.search-form button {
+    padding: 15px 30px;
+    background-color: #E50914;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #f40612;
+}
+
+/* Area risultati */
+#results-area {
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* Tabella risultati */
+#moviesTable {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
+
+#moviesTable thead tr {
+    border-bottom: 2px solid #E50914;
+    background: rgba(229, 9, 20, 0.15);
+}
+
+#moviesTable th {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #E50914;
+    white-space: nowrap;
+    text-align: left;
+}
+
+#moviesTable td {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    color: #ddd;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+#moviesTable tbody tr:hover {
+    background: rgba(229, 9, 20, 0.08);
+    transition: background 0.2s;
+}
+
+/* Colonne specifiche */
+.col-id {
+    width: 50px;
+    color: #888 !important;
+    font-size: 0.8rem !important;
+}
+
+.col-titolo {
+    font-weight: bold;
+    color: white !important;
+    min-width: 160px;
+}
+
+.col-durata {
+    white-space: nowrap;
+    width: 80px;
+}
+
+.col-descrizione {
+    font-size: 0.82rem !important;
+    color: #aaa !important;
+    max-width: 280px;
+    line-height: 1.4;
+}
+
+.col-prezzo {
+    white-space: nowrap;
+    width: 90px;
+}
+
+.badge-prezzo {
+    display: inline-block;
+    background: rgba(229, 9, 20, 0.2);
+    border: 1px solid rgba(229, 9, 20, 0.4);
+    color: #ff6b6b;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.col-recensione {
+    width: 110px;
+}
+
+.stelle {
+    color: #FFD700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.voto-num {
+    font-size: 0.78rem;
+    color: #999;
+    margin-left: 4px;
+}
+
+/* Nessun risultato */
+#no-result {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 8px;
+    border-left: 3px solid #E50914;
+    text-align: left;
+}
+
+#no-result p {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Loading spinner */
+.loading {
+    display: none;
+    margin: 20px auto;
+    text-align: center;
+    color: #E50914;
+    font-size: 0.95rem;
+}
+
+.spinner {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(229,9,20,0.3);
+    border-top-color: #E50914;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

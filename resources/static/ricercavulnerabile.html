@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IngFlix - Home</title>
+    <link rel="stylesheet" href="css/ricercavulnerabile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">ING<span>FLIX</span></div>
+    </header>
+
+    <main class="hero">
+        <div class="search-container">
+            <h1>Film, serie TV e tanto altro.</h1>
+            <p>Inserisci il titolo del film che vuoi guardare.</p>
+
+            <form class="search-form" onsubmit="return false;">
+                <input type="text" id="searchInput" placeholder="Nome del film..." required>
+                <button type="button" onclick="searchMovie()">Cerca</button>
+            </form>
+
+            <!-- Loading indicator -->
+            <div class="loading" id="loading">
+                <span class="spinner"></span> Ricerca in corso...
+            </div>
+
+            <div id="results-area" style="margin-top: 30px;">
+                <table id="moviesTable" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th class="col-id">ID</th>
+                            <th class="col-titolo">Titolo</th>
+                            <th class="col-durata">Durata</th>
+                            <th class="col-descrizione">Descrizione</th>
+                            <th class="col-prezzo">Noleggio</th>
+                            <th class="col-prezzo">Acquisto</th>
+                            <th class="col-recensione">Recensione</th>
+                        </tr>
+                    </thead>
+                    <tbody id="movie-list-body">
+                    </tbody>
+                </table>
+
+                <div id="no-result" style="display: none;">
+                    <p>Nessun film trovato con questo nome.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/ricercavulnerabile.js"></script>
+</body>
+</html>

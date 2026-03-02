@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export Catalogo Film</title>
+    <link rel="stylesheet" href="css/pdf.css">
+</head>
+<body>
+ 
+<div class="container">
+    <header>
+        <h1>Movie Catalog Exporter</h1>
+        <p>Filtra per valutazione ed esporta in PDF</p>
+    </header>
+   
+    <div class="card">
+        <div class="form-group">
+            <label for="stelle">Valutazione Minima (Stelle):</label>
+            <input type="text" id="stelle" placeholder="Esempio: 4" value="3">
+            <small>Inserisci un numero da 1 a 5</small>
+        </div>
+ 
+        <button id="btnExport">GENERA REPORT PDF</button>
+ 
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+            <p>Esecuzione comando in corso...</p>
+        </div>
+ 
+        <div id="resultContainer">
+            <h3>Output del Server:</h3>
+            <div id="result"></div>
+        </div>
+    </div>
+</div>
+ 
+<script src="js/pdf.js"></script>
+</body>
+</html>

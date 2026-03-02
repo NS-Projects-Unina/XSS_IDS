@@ -1,0 +1,184 @@
+/* Stili CSS per il tema cinematografico MovieFlix */
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    /* UTILIZZA L'IMMAGINE SALVATA LOCALMENTE */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), 
+        url('../img/sipario2.png') no-repeat center center fixed; 
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #e0e0e0; 
+}
+
+
+
+
+.container {
+    background-color: rgba(30, 30, 30, 0.9); 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+    width: 350px;
+    text-align: center;
+    border: 1px solid #ff0000; 
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: #ffcc00; 
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 12px 12px 40px; 
+    border: 1px solid #555;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #444; 
+    color: #fff;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #ff0000; 
+    outline: none;
+}
+
+/* STILE COMUNE PER ENTRAMBE LE ICONE (POSIZIONAMENTO E DIMENSIONE) */
+
+.email-icon, .password-icon {
+    position: absolute;
+    left: 15px;
+    top: 44px; 
+    color: #bbb;
+    font-size: 1.2em;
+    z-index: 2; 
+}
+
+
+
+/* STILE UNICO PER L'ICONA EMAIL */
+.email-icon {
+     position: absolute;
+    left: 15px;
+    top: 68%; 
+    transform: translateY(-50%);
+    color: #bbb;
+    font-size: 1.2em;
+    z-index: 2; 
+}
+
+
+
+/* 1. Il contenitore che avvolge solo input e icona */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* 2. L'icona del lucchetto */
+.input-wrapper .icon {
+    position: absolute;
+    left: 15px; 
+    top: 50%;   
+    transform: translateY(-50%);
+    color: #ccc; 
+    pointer-events: none;
+}
+
+/* 3. L'input stesso */
+.input-wrapper input {
+    width: 100%;
+    height: 45px;
+    padding-left: 45px; 
+    padding-right: 10px;
+    box-sizing: border-box; 
+    border-radius: 5px;
+    border: none;
+    background-color: #333; 
+    color: white;
+}
+
+
+
+
+
+
+
+.login-btn, .register-btn {
+    background-color: #ff0000; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    margin-top: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: #cc0000; 
+    transform: translateY(-2px);
+}
+
+.register-link, .forgot-password {
+    margin-top: 25px;
+    font-size: 0.7em;
+    color: #bbb;
+}
+
+.register-link a, .forgot-password a {
+    color: #ffcc00; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover, .forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Stile per il Messaggio di Errore Personalizzato */
+.error-message {
+    color: #ff0000;
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding: 5px 0;
+    text-align: left;
+    display: none; 
+    font-weight: bold;
+    border-top: 1px solid rgba(255, 0, 0, 0.3);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

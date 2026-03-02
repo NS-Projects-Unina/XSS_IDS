@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo - Ing.Flix</title>
+    <!-- Icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Stile CSS -->
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <!-- Logo -->
+        <div class="logo">
+            <i class="fas fa-play-circle"></i> Ing.Flix
+        </div>
+        
+        <!-- Parte Destra: Ricerca e Utente -->
+        <div class="header-right">
+            
+            <!-- <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Cerca titolo, genere..." onkeyup="searchMovie()">
+            </div> -->
+            <a href="richiestaFilm.html" class="btn-add">
+                Richiedi il tuo film
+            </a>
+            <a href="ricercavulnerabile.html"><i class="fas fa-search search-icon"></i></a>
+
+            <div class="user-menu">
+                <i class="fas fa-user-circle user-icon" onclick="toggleUserMenu()" title="Il tuo Profilo"></i>
+                <div id="userDropdown" class="dropdown-content">
+                    <a href="profilo.html">
+                    <i class="fas fa-user"></i> 
+                    <span id="nav-username">Profilo</span> </a>
+                    <a href="#"><i class="fas fa-cog"></i> Impostazioni</a>
+                    <hr style="border: 0; border-top: 1px solid #333; margin: 0;">
+                    <a href="/logout" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>  
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ================= CONTENUTO PRINCIPALE ================= -->
+    <div class="container">
+        
+        <!-- Intestazione con Titolo e Bottone -->
+        <div class="header-row">
+            <h1>Catalogo Film Disponibili</h1>
+            
+            
+            <a href="#" class="btn-add" onclick="apriModale()">
+                <i class="fas fa-plus"></i> Aggiungi Film
+            </a>
+        </div>
+
+        <!-- Tabella dei Film -->
+        <div class="table-wrapper">
+            <table id="moviesTable">
+                <thead>
+                    <tr>
+                        <th>Titolo Film</th>
+                        <th>Durata</th>
+                        <th>Descrizione</th>
+                        <th>Noleggio</th>
+                        <th>Acquisto</th>
+                        <th>Azioni</th>
+                        <th>Voto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+            <div id="no-result">Nessun film trovato con questo nome.</div>
+        </div>
+    </div>
+
+    
+    <div id="modalAggiungi" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="chiudiModale()">&times;</span>
+            <h2>Nuovo Film</h2>
+            
+            <!-- Il Form che chiama salvaFilm() -->
+            <form id="formFilm" onsubmit="event.preventDefault(); salvaFilm();">
+                <div class="form-group">
+                    <label>Titolo:</label>
+                    <input type="text" id="inputTitolo" required placeholder="Es. Inception">
+                </div>
+                
+                <div class="form-group">
+                    <label>Durata (min):</label>
+                    <input type="number" id="inputDurata" required placeholder="Es. 148">
+                </div>
+                
+                <div class="form-group">
+                    <label>Descrizione:</label>
+                    <textarea id="inputDescrizione" rows="3" required placeholder="Trama del film..."></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Prezzo Noleggio (€):</label>
+                        <input type="number" id="inputNoleggio" step="0.01" required placeholder="3.99">
+                    </div>
+                    <div class="form-group">
+                        <label>Prezzo Acquisto (€):</label>
+                        <input type="number" id="inputAcquisto" step="0.01" required placeholder="9.99">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Voto (1-5):</label>
+                    <input type="number" id="inputVoto" min="1" max="5" value="3">
+                </div>
+                
+                <button type="submit" class="btn-save">Salva Film</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="js/catalogo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesso Negato</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" th:href="@{/css/accesso_negato.css}">
+    
+    <style>
+        .btn-indietro {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: #333; 
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: sans-serif;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-indietro:hover {
+            background-color: #555; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-messaggio">
+        <i class="fas fa-lock icona-lock"></i>
+        <h1>ACCESSO NEGATO</h1>
+        <p>Non hai i permessi per visualizzare questa pagina.</p>
+
+        <a th:href="@{/catalogo.html}" class="btn-indietro">
+            <i class="fas fa-home"></i> Torna al catalogo
+        </a>
+    </div>
+
+</body>
+</html>
