@@ -1,0 +1,33 @@
+
+<command>
+  <name>win-firewall-drop</name>
+  <executable>route-null.exe</executable> 
+  <timeout_allowed>yes</timeout_allowed>
+</command>
+
+<command>
+  <name>block-keycloak-user</name>
+  <executable>block_user.cmd</executable>
+  <timeout_allowed>no</timeout_allowed>
+</command>
+
+  <active-response>
+    <command>win-firewall-drop</command>
+    <location>local</location>
+    <rules_id>100001</rules_id>
+    <timeout>60</timeout>
+  </active-response>
+
+  <active-response>
+    <command>block-keycloak-user</command>
+    <location>local</location>
+    <rules_id>100033,100035</rules_id> 
+    <disabled>no</disabled>
+  </active-response>
+
+  <integration>
+  <name>virustotal</name>
+  <api_key>API_KEY_VIRUS_TOTAL</api_key>
+  <group>syscheck</group>
+  <alert_format>json</alert_format>
+</integration>
